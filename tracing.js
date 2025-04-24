@@ -10,12 +10,12 @@ const { ExpressInstrumentation } = require("opentelemetry-instrumentation-expres
 const { MongoDBInstrumentation } = require("@opentelemetry/instrumentation-mongodb");
 const { HttpInstrumentation } = require("@opentelemetry/instrumentation-http");
 
-// Setup OTLP trace exporter to Jaeger (running locally)
+// Setup OTLP trace exporter to Jaeger
 const traceExporter = new OTLPTraceExporter({
   url: 'http://localhost:4318/v1/traces', // OTLP HTTP endpoint for Jaeger
 });
 
-// Setup OTLP metrics exporter (optional, not shown in Jaeger but included for completeness)
+// Setup OTLP metrics exporter
 const metricExporter = new OTLPMetricExporter({
   url: 'http://localhost:4318/v1/metrics',
 });
